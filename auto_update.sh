@@ -22,7 +22,7 @@ echo ""
 for (( ; ; )); do
   height=$($BINARY status 2>&1 | jq -r .SyncInfo.latest_block_height)
   if ((height >= TARGET_BLOCK)); then
-    bash <(curl -s https://raw.githubusercontent.com/garaed/lava-testnet/main/upgrade_0.4.4.sh)
+    bash <(curl -s https://raw.githubusercontent.com/garaed/haqq_scheduled_update/main/upgrade_1.3.1.sh)
     printCyan "Your node was successfully upgraded to version: $VERSION" && sleep 1
     $BINARY version --long | head
     break
